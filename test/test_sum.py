@@ -1,7 +1,11 @@
 import pytest 
+import sys
+import os
 
-def sum(a, b):
-    return a + b
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+
+from sum import sum
 
 def test_sum():
-    assert sum(2, -13) == -11
+    assert sum(6, 7) == 13
+    assert sum(14, -3) == 11
